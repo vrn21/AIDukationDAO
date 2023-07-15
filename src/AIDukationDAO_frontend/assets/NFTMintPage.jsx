@@ -1,7 +1,6 @@
 // NFTMintPage.js
 
 import React, { useState } from 'react';
-import {AIDukationDAO_backend} from "../../declarations/AIDukationDAO_backend";
 
 
 function Minter(){
@@ -11,14 +10,17 @@ function Minter(){
     const name = data.name;
     const image =  data.image[0];
     const imageArray = await image.arrayBuffer();
-    const imageByteData = [...new Uint8Array(imageArray)];
 
-    const newNFT = await AIDukationDAO_backend.mint(imageByteData,name);
+    const imageByteData = [...new Uint8Array(imageArray)];
 
 
   }
 
 }
+
+
+
+
 
 
 return (

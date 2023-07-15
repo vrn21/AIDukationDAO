@@ -1,4 +1,10 @@
 import { AIDukationDAO_backend } from "../../declarations/AIDukationDAO_backend";
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+
 
 document.querySelector("form").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -16,4 +22,13 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   document.getElementById("greeting").innerText = greeting;
 
   return false;
+
+  const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
 });
