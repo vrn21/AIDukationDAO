@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import {AIDukationDAO_backend} from "../../declarations/AIDukationDAO_backend";
 
+
 function Minter(){
   const {register,handleSubmit} = useForm();
 
