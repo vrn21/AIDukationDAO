@@ -6,7 +6,7 @@
     },
 
     "nft":{
-      "main": "src/NFT/nft.mo"
+      "main": "src/NFT/nft.mo",
       "type": "motoko"
     },
     "AIDukationDAO_frontend": {
