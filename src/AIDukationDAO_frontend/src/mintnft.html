@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mint NFT</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        input {
+            background-color: #363636;
+            border: none;
+            color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        #mintButton {
+            background-color: #4CAF50;
+            color: #f0f0f0;
+            padding: 14px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #mintButton:hover {
+            background-color: #45a049;
+        }
+
+        #mintButton:active {
+            background-color: #3e8e41;
+        }
+
+        #imagePreview {
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mint NFT</h1>
+    <form>
+        <input type="file" id="imageInput" accept="image/*">
+        <br>
+        <input type="text" id="nftName" placeholder="Name of NFT">
+        <br>
+        <img id="imagePreview" src="#" alt="Image preview">
+        <br>
+        <button type="button" id="mintButton">Mint NFT</button>
+    </form>
+
+    <script>
+        // Dark mode toggle
+        // You can add this functionality to toggle between light and dark mode
+        // using JavaScript or any front-end framework like React, Vue, etc.
+
+        // Function to preview the selected image
+        const imageInput = document.getElementById('imageInput');
+        const imagePreview = document.getElementById('imagePreview');
+
+        imageInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.addEventListener('load', function () {
+                    imagePreview.src = reader.result;
+                });
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Function to handle the "Mint NFT" button click
+        const mintButton = document.getElementById('mintButton');
+        mintButton.addEventListener('click', function () {
+            const nftName = document.getElementById('nftName').value;
+            const imageFile = document.getElementById('imageInput').files[0];
+
+            // Implement your minting logic here
+            // For example, you can upload the image and NFT name to a server
+            // and mint the NFT on the blockchain or any other desired actions.
+            // This example only showcases the front-end part.
+        });
+    </script>
+</body>
+</html>
