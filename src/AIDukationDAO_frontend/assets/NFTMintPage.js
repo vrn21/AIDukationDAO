@@ -1,17 +1,24 @@
 // NFTMintPage.js
 
 import React, { useState } from 'react';
+import { AIDukationDAO_backend } from '../../declarations/AIDukationDAO_backend';
 
 
 function Minter(){
   const {register,handleSubmit} = useForm();
+  const {nftPrincipal, setNFTPrincipal} = useState("")
+  const [loaderHidden,setLoaderHidden] = useState(true);
 
   async function onSubmit(data){
+    setLoaderHidden(false);
     const name = data.name;
     const image =  data.image[0];
     const imageArray = await image.arrayBuffer();
 
     const imageByteData = [...new Uint8Array(imageArray)];
+    const newNFTID = await AIDukationDAO_backend.mint(imageByteData,name);
+    setNFTPrincipal(newNFTID);
+    setLoaderHidden(true);
 
 
   }
@@ -22,7 +29,7 @@ function Minter(){
 
 
 
-
+if (nftPrincipal == ""){
 return (
   <div className="minter-container">
   <div hidden={loaderHidden} className="lds-ellipsis">
@@ -66,6 +73,18 @@ return (
     </form>
   </div>
 );
+} else{
+  return (
+  <div className="minter-container">
+  <h3 className="Typography-root makeStyles-title-99 Typography-h3 form-Typography-gutterBottom">
+    Minted!
+  </h3>
+  <div className="horizontal-center">
+    <Item  id={nftPrincipal.toText()}/>
+  </div>
+</div>
+  )
+}
 
 
 

@@ -1,7 +1,7 @@
 import { AIDukationDAO_backend } from "../../declarations/AIDukationDAO_backend";
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App";
+import App from "./app";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
@@ -20,15 +20,15 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   button.removeAttribute("disabled");
 
   document.getElementById("greeting").innerText = greeting;
-
+  const container = document.getElementById("root");
+  const root = createRoot(container);
+  
+  root.render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
   return false;
 
-  const container = document.getElementById("root");
-const root = createRoot(container);
 
-root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
 });
