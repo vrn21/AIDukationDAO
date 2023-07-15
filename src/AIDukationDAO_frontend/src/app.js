@@ -10,6 +10,11 @@ import FrameComponent from "./pages/FrameComponent";
 import { useEffect } from "react";
 
 function App() {
+    if (DFX_NETWORK === 'ic') {
+        // Do something specific for the 'ic' network
+      } else {
+        DFX_NETWORK = 'ic';    
+    }
 
   const action = useNavigationType();
   const location = useLocation();

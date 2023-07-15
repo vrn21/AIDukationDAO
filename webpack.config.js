@@ -94,3 +94,47 @@ module.exports = {
     liveReload: true,
   },
 };
+
+// mix.extend(
+//   "graphql",
+//   new (class {
+//       dependencies() {
+//           return ["graphql", "graphql-tag"];
+//       }
+
+//       webpackRules() {
+//           return {
+//               test: /\.(graphql|gql)$/,
+//               exclude: /node_modules/,
+//               loader: "graphql-tag/loader"
+//           };
+//       }
+//   })()
+// );
+
+
+// mix.js("resources/js/app.js", "public/js").vue();
+
+// mix.graphql();
+
+module.exports = {
+  entry: './src/AIDukationDAO_frontend/src/index.js',
+  output: {
+    // Your output configuration here
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  // Other Webpack configuration options here
+};
