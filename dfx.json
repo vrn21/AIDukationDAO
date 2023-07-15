@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "AIDukationDAO_backend": {
+      "main": "src/AIDukationDAO_backend/main.mo",
+      "type": "motoko"
+    },
+    "AIDukationDAO_frontend": {
+      "dependencies": [
+        "AIDukationDAO_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/AIDukationDAO_frontend/src/index.html"
+      },
+      "source": [
+        "src/AIDukationDAO_frontend/assets",
+        "dist/AIDukationDAO_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
