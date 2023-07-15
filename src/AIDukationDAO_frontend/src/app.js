@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 function App() {
 
-  onst action = useNavigationType();
+  const action = useNavigationType();
   const location = useLocation();
   const pathname = location.pathname;
 
@@ -47,11 +47,13 @@ function App() {
   }, [pathname]);
   return (
     <div>
+        <div>
       <NFTMintPage />
     </div>
     <Routes>
     <Route path="/" element={<FrameComponent />} />
   </Routes>
+      </div>
   );
 }
 

@@ -1,3 +1,3 @@
 service : {
-  greet: (text) -> (text) query;
+  mint: (vec nat8, text) -> (principal);
 }
