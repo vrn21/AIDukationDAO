@@ -1,6 +1,6 @@
 const ConnectWallet = () => {
   return (
-    <button
+    <a
       style={{
         cursor: "pointer",
         border: "none",
@@ -16,11 +16,14 @@ const ConnectWallet = () => {
         color: "#fff",
         textAlign: "left",
         display: "inline-block",
-      }}
+      }
+    }
       autoFocus
+
+      href = './wallet.js'
     >
       Connect Wallet
-    </button>
+    </a>
   );
 };
 

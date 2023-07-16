@@ -16,13 +16,6 @@ function Minter(){
 
   }
 
-}
-
-
-
-
-
-
 return (
   <div className="minter-container">
   <div hidden={loaderHidden} className="lds-ellipsis">
@@ -67,6 +60,6 @@ return (
   </div>
 );
 
-
+}
 
 export default NFTMintpage;

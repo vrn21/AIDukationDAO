@@ -14,7 +14,7 @@
         "AIDukationDAO_backend"
       ],
       "frontend": {
-        "entrypoint": "src/AIDukationDAO_frontend/src/index.html"
+        "entrypoint": "src/AIDukationDAO_frontend/src/index.js"
       },
       "source": [
         "src/AIDukationDAO_frontend/assets",

@@ -1,12 +1,9 @@
-import { AIDukationDAO_backend } from "../../declarations/AIDukationDAO_backend";
 import React from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import ReactDOM from "react-dom";
+import { AIDukationDAO_backend } from "../../declarations/AIDukationDAO_backend";
+import App from "./app";
 
-
-document.querySelector("form").addEventListener("submit", async (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault();
   const button = e.target.querySelector("button");
 
@@ -14,21 +11,18 @@ document.querySelector("form").addEventListener("submit", async (e) => {
 
   button.setAttribute("disabled", true);
 
-  // Interact with foo actor, calling the greet method
+  // Interact with the backend canister, calling the greet method
   const greeting = await AIDukationDAO_backend.greet(name);
 
   button.removeAttribute("disabled");
 
   document.getElementById("greeting").innerText = greeting;
 
-  return false;
+  init();
+};
 
-  const container = document.getElementById("root");
-const root = createRoot(container);
+const init = async () => {
+  ReactDOM.render(<App />, document.getElementById("root"));
+};
 
-root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
-});
+document.querySelector("form").addEventListener("submit", handleSubmit);
